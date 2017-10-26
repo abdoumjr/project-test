@@ -1,0 +1,19 @@
+<div class="card" style="width: 20rem; text-align: center; margin : 0px 400px;">
+  <image id="profileImage" src="http://www.uidownload.com/files/485/712/861/avatar-ninja-samurai-warrior-icon.png" />
+  <div class="card-block">
+    <h4 class="card-title">{{$user->name}}'s Profile</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{$user->name}}</li>
+    <li class="list-group-item">{{$user->email}}</li>
+    <li class="list-group-item">Join at {{$user->created_at}}</li>
+  </ul>
+  <div class="card-block">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+</div>
+</div>
