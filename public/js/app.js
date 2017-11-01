@@ -42723,10 +42723,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -42770,29 +42766,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.open = true;
     },
 
-    fileSelected: function fileSelected(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      if (!files.length) {
-        return;
-      }
-      this.createImage(files[0]);
-    },
-
-    createImage: function createImage(file) {
-      var _this = this;
-
-      var image = new Image();
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        _this.image = e.target.result;
-      };
-      reader.readAsDataURL(file);
+    mounted: function mounted() {
+      this.getdata();
     }
-  },
-
-  mounted: function mounted() {
-    this.getdata();
   }
 });
 
@@ -42800,7 +42776,144 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "panel-group" }, [
+    _c("div", { staticClass: "panel panel-primary" }, [
+      _c("div", { staticClass: "panel-heading" }, [_vm._v("Profile ")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "panel-body" }, [
+        _c(
+          "div",
+          {
+            staticClass: "card",
+            staticStyle: {
+              width: "20rem",
+              "text-align": "center",
+              margin: "0px 400px"
+            }
+          },
+          [
+            _vm.open
+              ? _c("div", [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Name:")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.list.name,
+                          expression: "list.name"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text", required: "" },
+                      domProps: { value: _vm.list.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.list, "name", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Email@:")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.list.email,
+                          expression: "list.email"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text", required: "" },
+                      domProps: { value: _vm.list.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.list, "email", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger",
+                      attrs: { type: "submit" },
+                      on: {
+                        click: function($event) {
+                          _vm.editexp()
+                        }
+                      }
+                    },
+                    [_vm._v("accept")]
+                  )
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-block" }, [
+              _c("h4", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(_vm.data.name) + " 's Profile")
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "Some quick example text to build on the card title and make up the bulk of the card's content."
+                )
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "list-group list-group-flush" }, [
+                _c("li", { staticClass: "list-group-item" }, [
+                  _vm._v(_vm._s(_vm.data.name))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _vm._v(_vm._s(_vm.data.email))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "list-group-item" }, [
+                  _vm._v("Join at " + _vm._s(_vm.data.created_at))
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-warning",
+                  staticStyle: { float: "right" },
+                  on: {
+                    click: function($event) {
+                      _vm.getready(_vm.data)
+                    }
+                  }
+                },
+                [_vm._v("Edit My Profile")]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {

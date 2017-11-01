@@ -16,10 +16,6 @@
       <label >Email@:</label>
       <input type="text" class="form-control" v-model="list.email" required>
     </div>
-    <div class="form-group">
-      <label >Profile Picture :</label>
-      <input  v-on:change="fileSelected" type="file" class="form-control" v-model="list.photo" required>
-    </div>
 
     <button type="submit" class="btn btn-danger" v-on:click="editexp()">accept</button>
 
@@ -43,7 +39,7 @@
 </div>
 </div>
 </div>
-
+</div>
 
 
 
@@ -99,28 +95,9 @@ export default{
   },
 
 
-  fileSelected: function(e) {
-              let files = e.target.files || e.dataTransfer.files;
-              if (!files.length) {
-                   return;
-              }
-              this.createImage(files[0]);
-          },
-
-          createImage(file) {
-              let image = new Image();
-              let reader = new FileReader();
-
-              reader.onload = (e) => {
-                  this.image   = e.target.result;
-              };
-              reader.readAsDataURL(file);
-          },
-},
-
-
   mounted() {
     this.getdata();
-    }
-  };
+  },
+  }
+}
 </script>
